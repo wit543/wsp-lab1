@@ -30,6 +30,6 @@ for route in routes:
           candidates.append([route,busid])
 
 f = open('candidates.txt','wb')
-for candidate in candidates
+for candidate in candidates:
     f.write(candidate[0]+" "+candidate[1])
 f.close()
