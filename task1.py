@@ -20,7 +20,7 @@ from xml.etree.ElementTree import parse
 candidates =[]
 for route in routes:
     doc = parse('rt'+route+'.xml')
-    for bus in doc.findall('bus')
+    for bus in doc.findall('bus'):
       lat = float(bus.findtext('lat'))
       if lat >= office_lat:
         busid = bus.findtext('id')
