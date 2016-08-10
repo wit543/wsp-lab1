@@ -10,18 +10,26 @@ for route in routes:
     f = open('rt'+route+'.xml', 'wb')
     f.write(data)
     f.close()
+    print("route: "+route+" downloaded")
 print('download route complete')
 
 office_lat = 41.980262
 office_lon = -87.668452
 from xml.etree.ElementTree import parse
 
+candidates =[]
 for route in routes:
     doc = parse('rt'+route+'.xml')
-    for bus in doc.findall('bus'):
+    for bus in doc.findall('bus')
       lat = float(bus.findtext('lat'))
       if lat >= office_lat:
         busid = bus.findtext('id')
         direction = bus.findtext('d')
         if direction.startswith('North'):
           print(busid, direction, lat)
+          candidates.append([route,busid])
+
+f = open('candidates.txt','wb')
+for candidate in candidates
+    f.write(candidate[0]+" "+candidate[1])
+f.close()
