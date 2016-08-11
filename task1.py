@@ -29,7 +29,7 @@ for route in routes:
           print(busid, direction, lat)
           candidates.append([route,busid])
 
-f = open('candidates.txt','wb')
+f = open('candidates.txt','w')
 for candidate in candidates:
     out =candidate[0]+" "+candidate[1]
     f.write(out)
