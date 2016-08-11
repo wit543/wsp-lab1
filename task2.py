@@ -1,5 +1,5 @@
 
-f = open('candidates.text','wb')
+f = open('candidates.txt','r')
 
 candidates = []
 for line in f:
