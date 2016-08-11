@@ -16,7 +16,7 @@ office_lat = 41.980262
 office_lon = -87.668452
 
 while True:
-    for candidate in candidates
+    for candidate in candidates:
         u = urllib.request.urlopen('http://ctabustracker.com/bustime/map/getBusesForRoute.jsp?route='+candidate[0])
         data = u.read()
         f = open("rt"+candidate[0]+".xml",'wb')
@@ -35,4 +35,4 @@ while True:
                     direction = bus.findtext('d')
                     if direction.startswith('North'):
                       webbrowser.open('https://maps.googleapis.com/maps/api/staticmap?&markers=color:red%7Clabel:C%7C'+lat+','+lon)
-                      return
+                      break
